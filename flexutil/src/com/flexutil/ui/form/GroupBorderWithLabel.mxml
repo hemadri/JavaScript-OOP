@@ -1,0 +1,47 @@
+<?xml version="1.0" encoding="utf-8"?>
+<s:Group xmlns:fx="http://ns.adobe.com/mxml/2009" 
+		 xmlns:s="library://ns.adobe.com/flex/spark" 
+		 xmlns:mx="library://ns.adobe.com/flex/mx" >
+	<fx:Declarations>
+	</fx:Declarations>
+	<!--TODO: need to convert the below structure in ActionScript in createChildren-->
+	<fx:Script>
+		<![CDATA[
+			import mx.graphics.SolidColorStroke;
+			
+			import spark.components.Label;
+			import spark.primitives.Rect;
+			
+			public var borderColor:uint=0;
+			public var titleColor:uint = 0x0000FF;
+			public var titleFontSize:uint = 14;
+			public var titleLeadingSpace:uint = 15;
+			[Bindable] public var title:String;
+			
+			private var rect:Rect 
+			override protected function createChildren():void
+			{
+				rect = new Rect();
+//				rect.percentWidth= 99;
+//				rect.percentHeight = 99;
+				rect.left = rect.right = rect.bottom = 1;
+				rect.top = 3
+				rect.stroke = new SolidColorStroke(borderColor);
+				var label:Label = new Label();
+				label.text =  title;
+				label.x = titleLeadingSpace;
+				label.y = -3;
+				label.setStyle('color', titleColor);
+				label.setStyle('fontSize', titleFontSize);
+				label.setStyle('fontWeight', "bold");
+				label.opaqueBackground = 0xFFFFFF;
+				this.addElement(rect);
+				this.addElement(label);
+				
+				super.createChildren();
+			}
+			
+			
+		]]>
+	</fx:Script>
+</s:Group>

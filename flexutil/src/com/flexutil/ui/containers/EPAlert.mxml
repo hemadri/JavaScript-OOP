@@ -1,0 +1,56 @@
+<?xml version="1.0" encoding="utf-8"?>
+<mx:Canvas xmlns:mx="http://www.adobe.com/2006/mxml" width="400" height="96" 
+		   backgroundColor="#FFFFFF" cornerRadius="4" >
+		   <!--borderStyle="solid" borderThickness="0" dropShadowEnabled="true">-->
+	<mx:Image x="10" y="10" width="57" height="53"  scaleContent="false" id="img_icon"/>
+	<mx:Button x="348" y="62" label="Ok" id="butn_ok" click="{EPPopUpManager.removePopUp(this)}"/>
+	<mx:TextArea x="75" y="10" width="315" borderStyle="none" 
+				 id="txt_label" text="{text}"
+				 editable="false"/>
+	
+	<mx:Script>
+		<![CDATA[
+			import com.flexutil.ui.managers.EPPopUpManager;
+			
+			import mx.core.Application;
+			import mx.events.CloseEvent;
+			
+			/**
+			 This is an example of a custom component you can create to use the EPPopUpManager
+			 Could be usefull for things like login boxes, system messages etc.
+			 **/
+			 
+			[Bindable]
+			public var text:String;
+		
+			public static function show(text:String = "", title:String = "",
+                                flags:uint = 0x4 /* Alert.OK */, 
+                                parent:Sprite = null, 
+                                modal:Boolean = false,
+                                closeHandler:Function = null, 
+                                iconClass:Class = null, 
+                                defaultButtonFlag:uint = 0x4 /* Alert.OK */):EPAlert
+    		{
+
+
+				var alert:EPAlert = new EPAlert();	
+
+				if (!parent){
+					parent = Sprite(Application.application);	
+				}
+					
+				if (closeHandler != null)
+            		alert.addEventListener(CloseEvent.CLOSE, closeHandler);
+            		
+            	alert.text = text;
+				
+		         if(iconClass)
+		        	alert.img_icon = new iconClass(); 
+
+        		EPPopUpManager.addPopUp(alert, parent, modal);
+
+				return alert;
+			}
+		]]>
+	</mx:Script>
+</mx:Canvas>
