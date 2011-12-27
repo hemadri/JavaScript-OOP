@@ -1,0 +1,48 @@
+<?xml version="1.0" encoding="utf-8"?>
+<mx:Label xmlns:fx="http://ns.adobe.com/mxml/2009" 
+		  xmlns:s="library://ns.adobe.com/flex/spark" 
+		  xmlns:mx="library://ns.adobe.com/flex/mx">
+	<fx:Script>
+		<![CDATA[
+			/* override public function set data(value:Object):void
+			{
+				super.data = value;
+				if(data)
+				{
+					if(data.active == 'N')
+						this.setStyle('color',0xcccccc);
+					else
+						this.setStyle('color',0x000000);
+				}
+			} */
+			private var _enabled:Boolean = true;
+
+			override public function set data(value:Object):void
+			{
+				if (value != null && value.hasOwnProperty('status') && value.status=='N')
+					_enabled = false;
+				else
+					_enabled = true;
+				super.data = value;
+			}     
+			
+			override protected function updateDisplayList(unscaledWidth:Number, unscaledHeight:Number):void
+			{
+				super.updateDisplayList(unscaledWidth, unscaledHeight);
+				
+				if (_enabled) 
+				{
+					textField.setColor(getStyle("color"));
+					toolTip = text;
+				}
+				else
+				{
+					toolTip = text+' ( InActive )';
+					textField.setColor(getStyle("disabledColor"));
+				}
+				
+			}            
+		]]>
+	</fx:Script>
+	
+</mx:Label>

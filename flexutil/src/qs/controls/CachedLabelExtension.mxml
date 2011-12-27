@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="utf-8"?>
+<controls:CachedLabel xmlns:fx="http://ns.adobe.com/mxml/2009" 
+					  xmlns:s="library://ns.adobe.com/flex/spark" 
+					  xmlns:mx="library://ns.adobe.com/flex/mx" xmlns:controls="qs.controls.*" 
+					  color.selected="#E27C0E" color.normal="#000000"
+					  fontSize="18">
+	<controls:states>
+		<s:State name="normal"/>
+		<s:State name="selected"/>
+		<s:State name="hilighted"/>		
+	</controls:states>
+	<fx:Declarations>
+		<!-- Place non-visual elements (e.g., services, value objects) here -->
+	</fx:Declarations>
+	<controls:filters>
+		<s:GlowFilter inner="false" strength="3" alpha="1.0" quality="{BitmapFilterQuality.HIGH}" knockout="false" includeIn="selected" color="#888888"/>
+		<s:GlowFilter inner="false" strength="2" alpha="1.0" quality="{BitmapFilterQuality.HIGH}" knockout="false" includeIn="hilighted" color="#BBBBBB" />
+	</controls:filters>
+	<fx:Script>
+		<![CDATA[
+			import flash.filters.BitmapFilterQuality;
+		]]>
+	</fx:Script>
+	
+</controls:CachedLabel>

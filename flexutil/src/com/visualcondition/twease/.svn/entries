@@ -1,0 +1,78 @@
+8
+
+dir
+14
+https://twease.googlecode.com/svn/trunk/as3/com/visualcondition/twease
+https://twease.googlecode.com/svn
+
+
+
+2008-04-02T19:45:59.120022Z
+14
+andrewfitz
+
+
+svn:special svn:externals svn:needs-lock
+
+Colors.as
+file
+25
+
+
+
+2009-03-05T01:07:28.000000Z
+a20ab1c5b01dcfb8347b89494f935b51
+2009-03-05T01:16:13.221464Z
+25
+andrewfitz
+
+Easing.as
+file
+25
+
+
+
+2009-03-04T09:43:32.000000Z
+f39279d22a43c68bd9db6fcb6578be3a
+2009-03-05T01:16:13.221464Z
+25
+andrewfitz
+has-props
+
+Texts.as
+file
+25
+
+
+
+2009-03-05T01:07:28.000000Z
+813cf58329f04cedc392ca4ebf1fb8c7
+2009-03-05T01:16:13.221464Z
+25
+andrewfitz
+
+Extend.as
+file
+25
+
+
+
+2009-03-05T01:07:28.000000Z
+a1c3682f1d0e67c9dc96dde14c020189
+2009-03-05T01:16:13.221464Z
+25
+andrewfitz
+
+Twease.as
+file
+25
+
+
+
+2009-03-05T01:14:28.000000Z
+2b11877c52a6228f4159b659f74b3067
+2009-03-05T01:16:13.221464Z
+25
+andrewfitz
+has-props
+

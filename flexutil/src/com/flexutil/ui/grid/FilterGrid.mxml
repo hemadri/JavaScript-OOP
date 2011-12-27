@@ -1,0 +1,60 @@
+<?xml version="1.0" encoding="utf-8"?>
+<s:Group xmlns:fx="http://ns.adobe.com/mxml/2009" 
+		 xmlns:s="library://ns.adobe.com/flex/spark" 
+		 xmlns:mx="library://ns.adobe.com/flex/mx" 
+		 xmlns:ui="com.flexutil.ui.*" 
+		 xmlns:grid="com.flexutil.ui.grid.*">
+	<fx:Declarations>
+	</fx:Declarations>
+	
+	<fx:Metadata>
+		[Event(name="rowClicked", type="com.flexutil.events.DynamicGridEvent")]
+	</fx:Metadata>
+	
+	<fx:Script>
+		<![CDATA[
+			import com.flexutil.collections.DynamicGridCollection;
+			import com.flexutil.events.DynamicGridEvent;
+			
+			import mx.controls.Alert;
+			import mx.events.ListEvent;
+		
+		[Bindable] public var lProvider:DynamicGridCollection;
+		[Bindable] public var rowCount:int = 25;
+		
+		[Bindable] public var selectedRow:Object;	
+		
+		public static const ROW_CLICKED:String = 'rowClicked';	
+			
+		protected function itemClicked(event:ListEvent):void {
+		selectedRow = _grid.selectedItem;
+		var cEvent:DynamicGridEvent = new DynamicGridEvent(DynamicGridEvent.ROW_CLICK);
+		cEvent.listEvent = event;
+		dispatchEvent(cEvent);
+		
+		}
+		
+		public function matchChanged():void {
+		_grid.useFilter(_useFilter.selected);
+		_grid.match(_text.text, _select.selectedItem.dataField);
+		}
+		
+		
+		
+		]]>
+	</fx:Script>
+	<s:VGroup height="100%">
+		<s:HGroup >
+			<mx:ComboBox id="_select"  dataProvider="{_grid.provider}" change="matchChanged()" rowCount="6" width="100" toolTip="Select the search column"/>
+			<mx:TextInput id="_text" change="matchChanged()" width="140" toolTip="Type in the search text" />
+			<mx:CheckBox id="_useFilter" label="Filter" click="matchChanged()" selected="true" toolTip="Switch on/off the filter" />
+		</s:HGroup>
+		
+		<grid:DynamicGrid 
+			rowCount="{rowCount}" 
+			id="_grid" 
+			dataProvider="{lProvider}" 
+			itemClick="itemClicked(event)"
+			/>
+	</s:VGroup>	
+</s:Group>
