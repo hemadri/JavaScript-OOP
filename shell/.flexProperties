@@ -1,2 +1,2 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<flexProperties enableServiceManager="false" flexServerFeatures="4" flexServerType="8" flexWarLocation="D:/Hemadri/Setup/blazeds-bin-4.5.0.21408/blazeds.war" serverContextRoot="/shell" serverRoot="D:/workspace/shell/WebContent" serverRootURL="http://dtadamafg108393:7001/shell" toolCompile="true" useServerFlexSDK="false" version="2"/>
+<flexProperties enableServiceManager="false" flexServerFeatures="4" flexServerType="8" flexWarLocation="D:/Hemadri/Setup/blazeds-bin-4.5.0.21408/blazeds.war" serverContextRoot="/shell" serverRoot="D:/workspace/shell/WebContent" serverRootURL="http://localhost:7001/shell" toolCompile="true" useServerFlexSDK="false" version="2"/>

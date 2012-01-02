@@ -1,7 +1,7 @@
 /* CSS file */
 @namespace s "library://ns.adobe.com/flex/spark";
 @namespace mx "library://ns.adobe.com/flex/mx";
-@namespace well "com.aramco.rcd.main.modules.prespud.well.*";
+@namespace well "com.flexutil.shell.main.modules.prespud.well.*";
 
 /* TO DO: Need to organize styles*/
 global
@@ -19,7 +19,7 @@ s|Panel
 
 s|Button
 {
-/*	skinClass: ClassReference("com.aramco.ep.skins.EPButtonSkin");*/
+/*	skinClass: ClassReference("com.flexutil.ep.skins.EPButtonSkin");*/
 	chromeColor: #3399ff; 
 	color: #FFFFFF;
 }

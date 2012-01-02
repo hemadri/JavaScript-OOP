@@ -1,0 +1,131 @@
+<?xml version="1.0" encoding="utf-8"?>
+<s:HGroup xmlns:fx="http://ns.adobe.com/mxml/2009" 
+		 xmlns:s="library://ns.adobe.com/flex/spark" 
+		 xmlns:mx="library://ns.adobe.com/flex/mx" width="100%" height="100%"
+		 xmlns:code="http://code.google.com/p/flexlib/" 
+		 xmlns:skins="assets.skins.*" gap="0" 
+		 xmlns:menu="com.flexutil.shell.views.menu.*" >
+		<fx:Metadata>
+			[Event (name="closeMenu")]
+			[Event (name="openMenu")]
+		</fx:Metadata>
+	<fx:Script>
+		<![CDATA[
+			import mx.controls.LinkButton;
+			
+//			TODO: need to re structure CSS in this file
+			[Embed(source='assets/menu/menuup.png')] 		public static const MENU_UP:Class;
+			[Embed(source='assets/menu/menuover.png')] 		public static const MENU_OVER:Class;
+			
+			[Embed(source='assets/menu/menubg.png', scaleGridTop="18", scaleGridBottom="282", scaleGridLeft="5", scaleGridRight="31")] 
+			public static const MENU_BG:Class;
+			
+			[Bindable] public var menuClosed:Boolean=true;
+			
+			private function changeItemSelection(event:MouseEvent):void
+			{
+				//TODO: Need to equate with the itemCompenent selection
+				if(event.target is LinkButton)
+				{
+					menuClosed = true;
+					dispatchEvent(new Event('closeMenu'));
+				}
+			}
+			
+			private function openCloseMenu():void
+			{
+				if(menuClosed)
+					dispatchEvent(new Event('openMenu'));
+				else
+					dispatchEvent(new Event('closeMenu'));
+//				menuClosed = !menuClosed;
+			}
+		]]>
+	</fx:Script>
+	<fx:Style>
+		@namespace s "library://ns.adobe.com/flex/spark";
+		@namespace mx "library://ns.adobe.com/flex/mx";
+		@namespace code "http://code.google.com/p/flexlib/";
+		
+		.gradientHeader {
+			/* upSkin:ClassReference('flexlib.skins.EnhancedButtonSkin');
+			overSkin:ClassReference('flexlib.skins.EnhancedButtonSkin');
+			downSkin:ClassReference('flexlib.skins.EnhancedButtonSkin');
+			disabledSkin:ClassReference('flexlib.skins.EnhancedButtonSkin');
+			selectedUpSkin:ClassReference('flexlib.skins.EnhancedButtonSkin');
+			selectedOverSkin:ClassReference('flexlib.skins.EnhancedButtonSkin');
+			selectedDownSkin:ClassReference('flexlib.skins.EnhancedButtonSkin');
+			selectedDisabledSkin:ClassReference('flexlib.skins.EnhancedButtonSkin');
+		 */	font-family:Arial;
+			cornerRadii: 0, 0, 10, 10;
+			borderColors: #FFFFFF, #FFFFFF;
+			overBorderColors: #FFFFFF, #FFFFFF;
+			selectedBorderColors: #FFFFFF, #FFFFFF;
+			borderThickness: 2;
+			borderAlpha: 1;
+			fillColors: #FFFFFF, #FFFFFF;
+			fillAlphas: 1, 1;
+			fillColorRatios: 0, 255;
+			overFillColors: #FFFFFF, #BAC2CF;
+			overFillAlphas: 1, 1;
+			overFillColorRatios: 0, 169;
+			selectedFillColors: #FFFFFF, #BAC2CF;
+			selectedFillAlphas: 1,1;
+			selectedFillColorRatios: 0, 169;
+		}
+		.VAccordion {
+			
+			vertical-gap: 5;
+			background-alpha:0;
+			open-duration:500;
+			border-style:none;
+			padding-bottom:5;
+			header-style-name: gradientHeader;
+		}
+		.mypanelTitle {
+			color: #ffffff;
+			fontSize: 12;
+		}
+		.Panel1 {
+			borderStyle: solid;
+			
+			corner-radius:10;
+			borderAlpha: 1;
+			roundedBottomCorners: true;
+			headerHeight: 24;
+			highlightAlphas: 0, 0;
+			
+			borderColor: #0033cc;
+			headerColors: #0033cc, #0066ff;
+			/* borderColor: #b7babc;
+			headerColors: #b1b7c4, #8392ab; */
+			
+			titleStyleName: 'mypanelTitle';
+			border-thickness-left:1;
+			border-thickness-right:1;
+			border-thickness-top:0;
+			border-thickness-bottom:-5;
+			
+			border-thickness:1;   
+		}
+		
+	</fx:Style>	
+	<menu:MenuItems />
+			<!--<code:VAccordion  id="acc" backgroundColor="white" borderAlpha="1" borderColor="black" backgroundAlpha="1"
+							  borderStyle="solid" borderVisible="true"
+							  width="{MenuConst.MENU_WIDTH}" height="100%"    
+							  resizeToContent="false" headerLocation="below"
+							  headerRenderer="com.flexutil.rcd.views.menu.MenuRenderer"    
+							  styleName="VAccordion"  creationPolicy="all" click="changeItemSelection(event)" >
+				
+				<menu:PreSpudMenuItems title="Pre-Spud"   				description="Wellbore, Formations, IR, Location Eval etc.," />
+				
+			</code:VAccordion>
+			
+			<s:Group width="{MenuConst.MENU_IMG_WIDTH}" height="100%" id="menuBar" click="openCloseMenu()">
+				<mx:Image width="40" source="{MENU_BG}" height="100%" maintainAspectRatio="false" />
+				<mx:Image id="menuImg" source="{MENU_UP}"  mouseOver="menuImg.source=MENU_OVER"  mouseOut="menuImg.source=MENU_UP"  
+						  verticalCenter="0"/>
+			</s:Group>-->
+</s:HGroup>
+		

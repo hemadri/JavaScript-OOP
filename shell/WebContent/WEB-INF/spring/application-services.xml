@@ -12,23 +12,23 @@
 		http://www.springframework.org/schema/flex/spring-flex-1.0.xsd">	
     
     <!-- Login Services -->
-        <bean id="loginService" class="com.aramco.rcd.service.LoginService" scope="session" >
+        <bean id="loginService" class="com.flexutil.shell.service.LoginService" scope="session" >
         	<aop:scoped-proxy />
         </bean>
         
-        <bean id="logoutService" class="com.aramco.rcd.service.LogoutService" scope="request" >
+        <bean id="logoutService" class="com.flexutil.shell.service.LogoutService" scope="request" >
         	<aop:scoped-proxy />
         </bean>
-        <bean id="springApplicationContext" class="com.aramco.rcd.service.SpringApplicationContext" scope="singleton" />
+        <bean id="springApplicationContext" class="com.flexutil.shell.service.SpringApplicationContext" scope="singleton" />
         
         
      <!-- ********************** General Services **********************************************************-->  
-        <bean id="paramSelectionService" class="com.aramco.rcd.service.ParamSelectionService" scope="request" >
+        <bean id="paramSelectionService" class="com.flexutil.shell.service.ParamSelectionService" scope="request" >
         	<aop:scoped-proxy />
         </bean>
         
         
-        <bean id="reportService" class="com.aramco.rcd.service.reports.ReportService" scope="request" >
+        <bean id="reportService" class="com.flexutil.shell.service.reports.ReportService" scope="request" >
         	<aop:scoped-proxy />
         </bean>
         
@@ -37,19 +37,19 @@
         
         
      	<!--  Factory Classes -->   
-        <bean id="baseFactory" class="com.aramco.rcd.dao.factory.BaseFactory" scope="session" abstract="true">
+        <bean id="baseFactory" class="com.flexutil.shell.dao.factory.BaseFactory" scope="session" abstract="true">
         
         	<property name="iBatisConfigFileLocation">
-	            <value>com/aramco/rcd/dao/mappers/mybatis.xml</value>
+	            <value>com/flexutil/shell/dao/mappers/mybatis.xml</value>
 	        </property>
         </bean>
         
         <!-- Application Factory Classes -->
-        <bean id="logger" class="com.aramco.rcd.database.LoggerConfiguration" scope="session" destroy-method="destroy"/>
-        <bean id="authenticateFactory" class="com.aramco.rcd.dao.factory.AuthenticateFactory" scope="request" parent="baseFactory"/>
-        <bean id="loginUser" class="com.aramco.rcd.entity.common.LoginUser" scope="session" destroy-method="destroy"/>
-        <bean id="logonUser" class="com.aramco.rcd.entity.common.LogonUser" scope="session" />
-        <bean id="dbConnector" class="com.aramco.rcd.database.DBConnector" >
+        <bean id="logger" class="com.flexutil.shell.database.LoggerConfiguration" scope="session" destroy-method="destroy"/>
+        <bean id="authenticateFactory" class="com.flexutil.shell.dao.factory.AuthenticateFactory" scope="request" parent="baseFactory"/>
+        <bean id="loginUser" class="com.flexutil.shell.entity.common.LoginUser" scope="session" destroy-method="destroy"/>
+        <bean id="logonUser" class="com.flexutil.shell.entity.common.LogonUser" scope="session" />
+        <bean id="dbConnector" class="com.flexutil.shell.database.DBConnector" >
 			<property name="dbURL">
 	            <value>jdbc:oracle:thin:@</value>
 	        </property>

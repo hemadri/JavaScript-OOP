@@ -2,9 +2,9 @@
 <swiz:Swiz 	xmlns:s="library://ns.adobe.com/flex/spark"
 			xmlns:swiz="http://swiz.swizframework.org" 
 			xmlns:fx="http://ns.adobe.com/mxml/2009" 
-			xmlns:config="com.aramco.rcd.config.*" 
-			xmlns:paramSelection="com.aramco.rcd.modules.paramselection.config.*" 
-			xmlns:reports="com.aramco.rcd.modules.reports.config.*" >
+			xmlns:config="com.flexutil.shell.config.*" 
+			xmlns:config1="com.flexutil.shell.modules.paramselection.config.*" 
+			xmlns:config2="com.flexutil.shell.modules.reports.config.*" >
 	<fx:Script>
 		<![CDATA[
 			import mx.controls.Alert;
@@ -31,9 +31,9 @@
 	<!-- BeanProviders simply contain the non-display objects that Swiz should process. -->
 	<swiz:beanProviders>
 		<config:AppBeans />
-		<paramSelection:ParamSelectionBeans/>
+		<config1:ParamSelectionBeans/>
 		
-		<reports:ReportsBeans />
+		<config2:ReportsBeans />
 		
 	</swiz:beanProviders>
 	
@@ -50,13 +50,13 @@
 		
 		<swiz:SwizConfig  defaultFaultHandler="handleUnhandledFaults"            
 						  defaultDispatcher="global" 
-						  eventPackages="com.aramco.rcd.events.*,
-						  				 com.aramco.rcd.modules.paramselection.events.*,
-						  				 com.aramco.rcd.modules.reports.events.*"
+						  eventPackages="com.flexutil.shell.events.*,
+						  				 com.flexutil.shell.modules.paramselection.events.*,
+						  				 com.flexutil.shell.modules.reports.events.*"
 						  
-						  viewPackages="com.aramco.rcd.views.*, 
-						  				com.aramco.rcd.modules.paramselection.views.*, 
-						  				com.aramco.rcd.modules.reports.views.*"
+						  viewPackages="com.flexutil.shell.views.*, 
+						  				com.flexutil.shell.modules.paramselection.views.*, 
+						  				com.flexutil.shell.modules.reports.views.*"
 						  />
 	</swiz:config>
 						  

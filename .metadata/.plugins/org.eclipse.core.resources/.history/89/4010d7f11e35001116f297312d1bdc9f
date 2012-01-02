@@ -1,0 +1,64 @@
+<?xml version="1.0" encoding="utf-8"?>
+<swiz:Swiz 	xmlns:s="library://ns.adobe.com/flex/spark"
+			xmlns:swiz="http://swiz.swizframework.org" 
+			xmlns:fx="http://ns.adobe.com/mxml/2009" 
+			xmlns:config="com.aramco.rcd.config.*" 
+			xmlns:paramSelection="com.aramco.rcd.modules.paramselection.config.*" 
+			xmlns:reports="com.aramco.rcd.modules.reports.config.*" >
+	<fx:Script>
+		<![CDATA[
+			import mx.controls.Alert;
+			import mx.rpc.events.FaultEvent;
+			
+			private var errorCount:int=0;
+			/**
+			 *  hanles global fault events which are not handled at service declaration
+			 **/
+			private function handleUnhandledFaults(event:FaultEvent):void
+			{
+				trace('----------------------------SERVICE ERROR START ('+ ++errorCount+')--------------------------------'+new Date().toString());
+				trace('Fault Occured :'+event.fault.faultString);
+				trace('----------------------------SERVICE ERROR END ('+ errorCount+')-------------------------------------');
+			
+				if(event.fault.rootCause && event.fault.rootCause.hasOwnProperty('message') && event.fault.rootCause.message != null)
+					Alert.show(event.fault.rootCause.message,'Fault Occured :'+event.fault.faultCode);
+				else
+					Alert.show(event.fault.toString(),'Fault Occured :'+event.fault.faultCode);
+				//				Alert.show(' Error No : '+errorCount+'\n Please contact support with the error no','Error !');
+			}
+		]]>
+	</fx:Script>
+	<!-- BeanProviders simply contain the non-display objects that Swiz should process. -->
+	<swiz:beanProviders>
+		<config:AppBeans />
+		<paramSelection:ParamSelectionBeans/>
+		
+		<reports:ReportsBeans />
+		
+	</swiz:beanProviders>
+	
+	<!--TODO: consider removing the logging on live-production deployment ? -->
+	<swiz:loggingTargets>        
+		<swiz:SwizTraceTarget id="myTraceTarget" />   
+	</swiz:loggingTargets>
+	
+	<swiz:config>
+		<!-- The eventPackages value tells Swiz the path to your Event classes,
+		and viewPackages is an optional value that speeds up the processing of display classes. -->
+		
+		<!--TODO: Need to add below events to their respective module swiz instances-->
+		
+		<swiz:SwizConfig  defaultFaultHandler="handleUnhandledFaults"            
+						  defaultDispatcher="global" 
+						  eventPackages="com.aramco.rcd.events.*,
+						  				 com.aramco.rcd.modules.paramselection.events.*,
+						  				 com.aramco.rcd.modules.reports.events.*"
+						  
+						  viewPackages="com.aramco.rcd.views.*, 
+						  				com.aramco.rcd.modules.paramselection.views.*, 
+						  				com.aramco.rcd.modules.reports.views.*"
+						  />
+	</swiz:config>
+						  
+						  
+</swiz:Swiz>

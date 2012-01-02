@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="utf-8"?>
+<mx:VBox xmlns:fx="http://ns.adobe.com/mxml/2009" 
+		 xmlns:s="library://ns.adobe.com/flex/spark" 
+		 xmlns:mx="library://ns.adobe.com/flex/mx" 
+		 width="100%" height="100%"
+		 showEffect="Fade"  paddingTop="10">
+	<fx:Script>
+		<![CDATA[
+//			import com.aramco.ep.icons.IconFactory;
+			import com.flexutil.shell.modules.paramselection.events.ParamSelectionEvent;
+			import com.flexutil.shell.modules.paramselection.model.IParamMenu;
+			
+			[Bindable] public var description:String;
+			[Bindable] public var image:*;
+			[Bindable] public var title:String;
+			
+		]]>
+	</fx:Script>
+	<s:HGroup paddingLeft="10">
+		<!--<s:BitmapImage source="{IconFactory.MENU_ICON}" />-->
+		<mx:LinkButton label="Menu Item 1" color="0x3380DD" 
+					   click="{dispatchEvent(new ParamSelectionEvent(ParamSelectionEvent.HEADER,IParamMenu.HOME_SCREEN))}"/>
+	</s:HGroup>
+</mx:VBox>
