@@ -1,5 +1,7 @@
 package com.flexutil.utils
 {
+	import com.flexutil.data.DateRange;
+	
 	import mx.controls.Alert;
 	import mx.controls.DateField;
 	import mx.formatters.DateFormatter;

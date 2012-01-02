@@ -25,8 +25,10 @@ OTHER DEALINGS IN THE SOFTWARE.
 package qs.utils
 {
 	
-	import mx.graphics.IStroke;
 	import flash.display.Graphics;
+	
+	import mx.core.FlexVersion;
+	import mx.graphics.IStroke;
 	
 	public class GraphicsUtils
 	{
@@ -67,10 +69,12 @@ package qs.utils
 				{
 					if (bDrawing)
 					{
-						CONFIG::FLEX3 {	
-							stroke.apply( target );
+						if(FlexVersion.CURRENT_VERSION ==  FlexVersion.VERSION_3_0) {
+						//CONFIG::FLEX3 {	
+							stroke.apply( target,null, null );
 						}
-						CONFIG::FLEX4 {	
+						if(FlexVersion.CURRENT_VERSION ==  FlexVersion.VERSION_4_0) {
+//						CONFIG::FLEX4 {	
 							stroke.apply( target, null, null );
 						}
 					}

@@ -102,7 +102,7 @@ package com.flexutil.utils
 							
 							// Use ObjectUtil to do a basic comparison
 							
-							if ( ObjectUtil.compare( value1, value2 ) != 0 )
+							if (mx.utils.ObjectUtil.compare( value1, value2 ) != 0 )
 								flaggedProperties.push( property );
 						}
 						else if ( getQualifiedClassName( value1 ) == getQualifiedClassName( value2 ) )
@@ -111,7 +111,7 @@ package com.flexutil.utils
 							
 							// Iterate and recursively compare all the (non-excluded) properties
 							
-							var properties:Array = ObjectUtil.getClassInfo( value1 ).properties;
+							var properties:Array = mx.utils.ObjectUtil.getClassInfo( value1 ).properties;
 							for ( var i:int = 0; i < properties.length; i++ )
 							{
 								var childProperty:Property = new Property( properties[ i ].localName, property );

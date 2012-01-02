@@ -28,7 +28,7 @@ package com.flexutil.utils
 					return;
 
 				if(FlexVersion.CURRENT_VERSION == FlexVersion.VERSION_3_0) {
-					stroke.apply( graphics );
+					stroke.apply( graphics, null, null );
 				}
 				if(FlexVersion.CURRENT_VERSION == FlexVersion.VERSION_4_0) {
 					stroke.apply( graphics, null, null );

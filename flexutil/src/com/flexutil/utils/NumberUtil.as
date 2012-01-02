@@ -27,5 +27,44 @@ package com.flexutil.utils
 		{
 			return !isNaN(value) && value > 0;
 		}
+		
+		/**
+		 * Comparator function for two Numbers.
+		 */
+		public static function compare( a:Number, b:Number ):int
+		{
+			if ( a < b )
+			{
+				return -1;
+			}
+			else if ( b < a )
+			{
+				return 1;
+			}
+			else
+			{
+				return 0;
+			}
+		}
+		
+		/**
+		 * Returns a Boolean indicating whether the specified value is a whole number (ex. 1, 2, 3, etc.).
+		 */
+		public static function isWholeNumber( value:* ):Boolean
+		{
+			var number:Number = Number( value );
+			
+			return ( Math.floor( Math.abs( number ) ) == value );
+		}
+		
+		/**
+		 * Returns the first parameter if it is a valid Number, otherwise returns the second parameter.
+		 */
+		public static function sanitizeNumber( value:*, otherwise:Number ):Number
+		{
+			var number:Number = Number( value );
+			
+			return ( ( value == null ) || isNaN( number ) ) ? otherwise : number;
+		}
 	}
 }

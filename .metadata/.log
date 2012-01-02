@@ -73,3 +73,76 @@ Binding(CTRL+SHIFT+T,
 		,,true),null),
 	org.eclipse.ui.defaultAcceleratorConfiguration,
 	org.eclipse.ui.contexts.window,,,system)
+
+!ENTRY com.adobe.flexbuilder.project 4 43 2012-01-02 11:36:37.403
+!MESSAGE Could not traverse changed resources in project UploadTest.
+!STACK 1
+org.eclipse.core.internal.resources.ResourceException: Resource '/UploadTest/src' does not exist.
+	at org.eclipse.core.internal.resources.Resource.checkExists(Resource.java:319)
+	at org.eclipse.core.internal.resources.Resource.checkAccessible(Resource.java:196)
+	at org.eclipse.core.internal.resources.Resource.accept(Resource.java:49)
+	at org.eclipse.core.internal.resources.Resource.accept(Resource.java:106)
+	at org.eclipse.core.internal.resources.Resource.accept(Resource.java:90)
+	at com.adobe.flexbuilder.project.compiler.internal.BuilderUtils.copyDependents(BuilderUtils.java:359)
+	at com.adobe.flexbuilder.project.compiler.internal.FlexProjectBuilder.build(FlexProjectBuilder.java:346)
+	at com.adobe.flexbuilder.project.compiler.internal.FlexIncrementalBuilder.build(FlexIncrementalBuilder.java:157)
+	at org.eclipse.core.internal.events.BuildManager$2.run(BuildManager.java:627)
+	at org.eclipse.core.runtime.SafeRunner.run(SafeRunner.java:42)
+	at org.eclipse.core.internal.events.BuildManager.basicBuild(BuildManager.java:170)
+	at org.eclipse.core.internal.events.BuildManager.basicBuild(BuildManager.java:201)
+	at org.eclipse.core.internal.events.BuildManager$1.run(BuildManager.java:253)
+	at org.eclipse.core.runtime.SafeRunner.run(SafeRunner.java:42)
+	at org.eclipse.core.internal.events.BuildManager.basicBuild(BuildManager.java:256)
+	at org.eclipse.core.internal.events.BuildManager.basicBuildLoop(BuildManager.java:309)
+	at org.eclipse.core.internal.events.BuildManager.build(BuildManager.java:341)
+	at org.eclipse.core.internal.events.AutoBuildJob.doBuild(AutoBuildJob.java:140)
+	at org.eclipse.core.internal.events.AutoBuildJob.run(AutoBuildJob.java:238)
+	at org.eclipse.core.internal.jobs.Worker.run(Worker.java:55)
+!SUBENTRY 1 org.eclipse.core.resources 4 368 2012-01-02 11:36:37.404
+!MESSAGE Resource '/UploadTest/src' does not exist.
+
+!ENTRY com.adobe.flexbuilder.project 4 43 2012-01-02 11:36:53.654
+!MESSAGE Could not traverse changed resources in project shell.
+!STACK 1
+org.eclipse.core.internal.resources.ResourceException: Resource '/shell/flex_src' does not exist.
+	at org.eclipse.core.internal.resources.Resource.checkExists(Resource.java:319)
+	at org.eclipse.core.internal.resources.Resource.checkAccessible(Resource.java:196)
+	at org.eclipse.core.internal.resources.Resource.accept(Resource.java:49)
+	at org.eclipse.core.internal.resources.Resource.accept(Resource.java:106)
+	at org.eclipse.core.internal.resources.Resource.accept(Resource.java:90)
+	at com.adobe.flexbuilder.project.compiler.internal.BuilderUtils.copyDependents(BuilderUtils.java:359)
+	at com.adobe.flexbuilder.project.compiler.internal.FlexProjectBuilder.build(FlexProjectBuilder.java:346)
+	at com.adobe.flexbuilder.project.compiler.internal.FlexIncrementalBuilder.build(FlexIncrementalBuilder.java:157)
+	at org.eclipse.core.internal.events.BuildManager$2.run(BuildManager.java:627)
+	at org.eclipse.core.runtime.SafeRunner.run(SafeRunner.java:42)
+	at org.eclipse.core.internal.events.BuildManager.basicBuild(BuildManager.java:170)
+	at org.eclipse.core.internal.events.BuildManager.basicBuild(BuildManager.java:201)
+	at org.eclipse.core.internal.events.BuildManager$1.run(BuildManager.java:253)
+	at org.eclipse.core.runtime.SafeRunner.run(SafeRunner.java:42)
+	at org.eclipse.core.internal.events.BuildManager.basicBuild(BuildManager.java:256)
+	at org.eclipse.core.internal.events.BuildManager.basicBuildLoop(BuildManager.java:309)
+	at org.eclipse.core.internal.events.BuildManager.build(BuildManager.java:341)
+	at org.eclipse.core.internal.events.AutoBuildJob.doBuild(AutoBuildJob.java:140)
+	at org.eclipse.core.internal.events.AutoBuildJob.run(AutoBuildJob.java:238)
+	at org.eclipse.core.internal.jobs.Worker.run(Worker.java:55)
+!SUBENTRY 1 org.eclipse.core.resources 4 368 2012-01-02 11:36:53.654
+!MESSAGE Resource '/shell/flex_src' does not exist.
+
+!ENTRY com.adobe.flexbuilder.dcrad 4 1 2012-01-02 11:37:14.642
+!MESSAGE 
+!STACK 0
+java.lang.NullPointerException
+	at com.adobe.flexbuilder.dcrad.core.internal.ServicesManager.addListeners(ServicesManager.java:298)
+	at com.adobe.flexbuilder.dcrad.core.internal.ServicesManager.getInstance(ServicesManager.java:344)
+	at com.adobe.flexbuilder.dcrad.datamodel.DataModelUpdater.updateDataModel(DataModelUpdater.java:71)
+	at com.adobe.flexbuilder.dcrad.datamodel.DataModelUpdater$ProjectSettingsListener.projectDescriptionChanged(DataModelUpdater.java:163)
+	at com.adobe.flexbuilder.project.internal.FlexProjectCore.fireProjectDescriptionChanged(FlexProjectCore.java:1006)
+	at com.adobe.flexbuilder.project.actionscript.internal.ActionScriptProject.refreshProjectSettings(ActionScriptProject.java:1799)
+	at com.adobe.flexbuilder.project.internal.FlexProjectCore$RefreshProjectsJob.run(FlexProjectCore.java:665)
+	at org.eclipse.core.internal.jobs.Worker.run(Worker.java:55)
+
+!ENTRY org.eclipse.ui 4 4 2012-01-02 11:41:04.514
+!MESSAGE Unable to find view with id: com.adobe.flashbuilder.analytics.ui.SiteCatalystView, when creating perspective com.adobe.flexbuilder.editors.mxml.ui.perspectives.development
+
+!ENTRY oracle.eclipse.tools.weblogic 1 2000 2012-01-02 11:46:59.903
+!MESSAGE Started WebLogic Server Monitor [base_domain@localhost:7001, Version:10.3.0.0]
