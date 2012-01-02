@@ -1,0 +1,84 @@
+<?xml version="1.0" encoding="utf-8"?>
+<s:NavigatorContent xmlns:fx="http://ns.adobe.com/mxml/2009" 
+		 xmlns:s="library://ns.adobe.com/flex/spark" 
+		 xmlns:mx="library://ns.adobe.com/flex/mx" 
+		 xmlns:code="http://code.google.com/p/flexlib/"
+		 width="100%" height="100%"
+		 xmlns:menu="com.aramco.rcd.views.menu.*" 
+		 xmlns:views="com.aramco.rcd.views.*" 
+		 creationComplete="initSizes()"   
+		 show="initSizes()" resize="initSizes()" > 
+	
+	<fx:Script>
+		<![CDATA[
+			import com.aramco.rcd.events.LoginEvent;
+			import com.aramco.rcd.events.ViewStackEvent;
+			import com.aramco.rcd.model.ApplicationViewModel;
+			import com.aramco.rcd.modules.paramselection.model.IParamMenu;
+			import com.aramco.rcd.pm.AppNavigationPM;
+			import com.aramco.rcd.views.menu.MenuConst;
+			
+			import mx.events.FlexEvent;
+			
+			
+			[Inject][Bindable] 
+			public var appNavigationPM:AppNavigationPM;
+			
+			private function openMenu():void
+			{
+				main.x =0;
+				menuGroup.menuClosed = false;
+			}
+			
+			private function closeMenu():void
+			{
+				main.x = -1 * MenuConst.MENU_WIDTH;
+				menuGroup.menuClosed = true;
+			}
+			
+
+			protected function creationCompleteHandler(event:FlexEvent):void
+			{
+//				main.x = -200;
+				contentArea.width = width-42;
+			}
+
+
+			protected function initSizes():void
+			{
+				main.x =  -1 * MenuConst.MENU_WIDTH;
+				contentArea.width = width-42;
+//				dockedBar.width = width-200;
+				menuGroup.menuClosed = true;
+			}
+
+			private function logout():void
+			{
+				dispatchEvent(new LoginEvent(LoginEvent.LOG_OUT));
+			}
+
+		]]>
+	</fx:Script>
+	<mx:ApplicationControlBar id="dockedBar" styleName="applicationControlBar"
+							  dock="false" height="35" width="100%" horizontalGap="15">
+		
+		<mx:Label text="Welcome {appNavigationPM.logonUser.userFullName},  " color="white" fontSize="14"/>
+		<mx:LinkButton label="Logout" click="logout()" 
+					   color="white" fontSize="14"/>
+		<mx:Spacer width="100%"/>
+		<menu:ReportMenu  />
+		<mx:LinkButton label="Home" click="dispatchEvent(new ViewStackEvent(ViewStackEvent.VIEW_CHANGED,IParamMenu.HOME_SCREEN))"
+					   color="white" fontSize="14"/>
+		<mx:TextInput id="myTI" text=""/>
+		<!--TODO: Need to remove Flex Spy for production-->
+		<mx:Button label="Search" click="//FlexSpy.show()"/>
+	</mx:ApplicationControlBar>
+	
+	<mx:HBox id="main" width="100%" height="100%" moveEffect="Move" horizontalGap="2"  y="38">
+		<menu:MainMenu id="menuGroup" gap="1"  width="{MenuConst.MENU_WIDTH + MenuConst.MENU_IMG_WIDTH}" height="100%"  x="-200" 
+					  closeMenu="closeMenu()" openMenu="openMenu()" />
+		
+		<views:MainContainer   id="contentArea" width="100%"  height="100%"    click="closeMenu()"/>
+	</mx:HBox>
+	
+</s:NavigatorContent>

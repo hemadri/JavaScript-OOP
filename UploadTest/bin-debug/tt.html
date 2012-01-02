@@ -1,0 +1,25 @@
+<html>
+<head>
+<title>test</title>
+</head>
+<script language="vbscript">
+
+Public Sub RunScript()
+  Set objWSH = CreateObject("WScript.Shell")
+  strCMD = "cscript.exe D:\Hemadri\GIT\UploadTest\src\BrowseForFolder.vbs"
+  objWSH.Run(strCMD)
+
+End Sub
+
+</script>
+<body>
+<h1>testing</h1>
+
+<h1>testing things</h1>
+
+<br>
+<INPUT TYPE=BUTTON OnClick="RunScript" VALUE="RUN">This is some text<br>
+
+<br>
+</body>
+</html>

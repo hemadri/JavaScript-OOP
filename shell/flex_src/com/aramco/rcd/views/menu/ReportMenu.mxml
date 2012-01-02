@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="utf-8"?>
+<s:Group xmlns:fx="http://ns.adobe.com/mxml/2009" 
+		 xmlns:s="library://ns.adobe.com/flex/spark" 
+		 xmlns:mx="library://ns.adobe.com/flex/mx" >
+	<fx:Script>
+		<![CDATA[
+			import com.aramco.rcd.modules.reports.events.ReportEvent;
+			import com.aramco.rcd.modules.reports.model.IReportMenu;
+			import mx.events.MenuEvent;
+			
+			protected function menuShowHandler(evt:MenuEvent):void {
+				evt.menu.variableRowHeight = true;
+				evt.menu.invalidateSize();
+			}
+
+		]]>
+	</fx:Script>
+	
+	<mx:MenuBar height="28" dataProvider="{IReportMenu.menuData}" labelField="@label"  showRoot="false"
+				backgroundSkin="@Embed(source='assets/menu/menubgHoriz.png')"  menuShow="menuShowHandler(event)"
+
+			 itemClick="dispatchEvent(new ReportEvent(ReportEvent.HEADER, event.item.@menuOperation,event.item.@reportCategory))"/>
+</s:Group>

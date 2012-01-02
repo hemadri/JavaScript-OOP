@@ -1,0 +1,110 @@
+<?xml version="1.0" encoding="utf-8"?>
+<s:Skin xmlns:s="library://ns.adobe.com/flex/spark" xmlns:fx="http://ns.adobe.com/mxml/2009" xmlns:d="http://ns.adobe.com/fxg/2008/dt" xmlns:ai="http://ns.adobe.com/ai/2009" xmlns:flm="http://ns.adobe.com/flame/2008">
+	<fx:Metadata>[HostComponent("spark.components.Button")]</fx:Metadata>
+	<s:states>
+		<s:State name="up"/>
+		<s:State name="over"/>
+		<s:State name="down"/>
+		<s:State name="disabled"/>
+	</s:states>
+	<s:Group d:userLabel="Normal" x="0" y="0">
+		<s:Path data="M 0.105 0 C 3.769 1.814 5.431 4.047 5.565 8.015 L 5.564 8.299 L 5.566 8.294 L 5.566 8.371 L 5.574 8.321 L 5.565 8.017 C 5.557 8.189 5.533 8.347 5.494 8.493 C 5.417 8.7 5.329 8.895 5.229 9.075 C 4.431 10.231 2.357 10.243 0.624 10.275 C 0.413 10.262 0.207 10.258 0 10.263 L 0.105 0 Z" x="31.545" y="0.285" visible.over="false" id="path5" visible.disabled="false">
+			<s:fill>
+				<s:SolidColor/>
+			</s:fill>
+		</s:Path>
+		<s:Path data="M 0.105 10.275 C 3.769 8.462 5.431 6.229 5.565 2.262 L 5.564 1.977 L 5.566 1.982 L 5.566 1.904 L 5.574 1.954 L 5.565 2.259 C 5.557 2.086 5.533 1.929 5.494 1.782 C 5.417 1.576 5.329 1.381 5.229 1.2 C 4.431 0.044 2.357 0.032 0.624 0 C 0.413 0.014 0.207 0.018 0 0.014 L 0.105 10.275 Z" x="31.545" y="86.693" visible.over="false" id="path4" visible.disabled="false">
+			<s:fill>
+				<s:SolidColor/>
+			</s:fill>
+		</s:Path>
+		<s:Path data="M 0 40.678 C 0.016 30.727 3.546 20.704 11.422 12.991 C 14.372 10.103 18.516 6.495 22.736 4.021 C 24.871 2.77 27.027 2.69 29.058 2.26 C 31.144 1.816 36.282 3.434 36.111 0 L 35.969 40.678 L 36.156 81.311 C 36.327 77.877 31.1 79.627 29.013 79.185 C 26.983 78.754 24.871 78.586 22.736 77.335 C 18.516 74.861 14.372 71.254 11.422 68.364 C 3.546 60.651 0.016 50.629 0 40.678 Z" d:id="4" x="0.875" y="8.012" visible.over="false" id="path3" visible.disabled="false">
+			<s:fill>
+				<s:SolidColor color="#313132"/>
+			</s:fill>
+			<s:filters>
+				<s:DropShadowFilter alpha="0.5" angle="180" blurX="1" blurY="1" distance="1" quality="2"/>
+			</s:filters>
+		</s:Path>
+		<s:Path data="M 0 40.623 C 0.016 31.02 3.423 21.347 11.024 13.902 C 13.871 11.114 17.869 7.633 21.942 5.244 C 24.003 4.037 26.084 3.108 28.044 2.691 C 30.058 2.264 35.017 3.314 34.852 0 L 34.715 40.623 L 34.852 81.246 C 35.017 77.933 30.058 78.983 28.044 78.555 C 26.084 78.139 24.003 77.21 21.942 76.002 C 17.869 73.614 13.871 70.132 11.024 67.344 C 3.423 59.9 0.016 50.228 0 40.623 Z" x="2.304" y="8.031" visible.over="false" id="path2" visible.disabled="false">
+			<s:fill>
+				<s:LinearGradient scaleX="26.1418" x="9.317" y="40.624">
+					<s:GradientEntry ratio="0"/>
+					<s:GradientEntry color="#313132" ratio="0.672727"/>
+					<s:GradientEntry color="#464749" ratio="0.8"/>
+					<s:GradientEntry color="#313132" ratio="1"/>
+				</s:LinearGradient>
+			</s:fill>
+		</s:Path>
+		<s:Path data="M 0 36.227 C 0.015 27.09 3.141 17.884 10.115 10.8 C 12.725 8.147 16.393 4.834 20.132 2.563 C 22.02 1.412 23.93 0.528 25.727 0.133 C 26.264 0.014 27.026 0.017 27.837 0 L 27.837 0.042 C 27.569 0.061 27.327 0.087 27.117 0.133 C 25.319 0.528 23.41 1.412 21.522 2.563 C 17.782 4.834 14.115 8.147 11.504 10.8 C 4.53 17.884 1.405 27.09 1.389 36.227 C 1.405 45.365 4.53 54.571 11.504 61.655 C 14.115 64.307 17.782 67.621 21.522 69.893 C 23.41 71.043 25.319 71.927 27.117 72.322 C 27.327 72.368 27.569 72.395 27.837 72.412 L 27.837 72.455 C 27.026 72.439 26.264 72.441 25.727 72.322 C 23.93 71.927 22.02 71.043 20.132 69.893 C 16.393 67.621 12.725 64.307 10.115 61.655 C 3.141 54.571 0.015 45.365 0 36.227 Z" x="3.063" y="12.427" visible.over="false" id="path1" visible.disabled="false">
+			<s:fill>
+				<s:SolidColor color="#96999C"/>
+			</s:fill>
+		</s:Path>
+		<s:RichText ai:aa="2" color="#FFFFFF" columnCount="1" fontFamily="Calibri" fontSize="15.8778" fontWeight="bold" d:id="5" kerning="on" rotation="90" tabStops="S47.6332893371582" text="MENU" d:userLabel="MENU" flm:variant="2" whiteSpaceCollapse="preserve" x="30" y="27" visible.over="false" id="richtext1" visible.disabled="false"/>
+		<s:Group id="group1" d:userLabel="Hover" x="0" y="0" visible.down="false" visible.disabled="false" visible.up="false">
+			<s:Path data="M 0.105 0 C 3.769 1.814 5.431 4.047 5.565 8.015 L 5.564 8.299 L 5.566 8.294 L 5.566 8.371 L 5.574 8.321 L 5.565 8.017 C 5.557 8.189 5.533 8.347 5.494 8.493 C 5.417 8.7 5.329 8.895 5.229 9.075 C 4.431 10.231 2.357 10.243 0.624 10.275 C 0.413 10.262 0.207 10.258 0 10.263 L 0.105 0 Z" x="31.545" y="0.285">
+				<s:fill>
+					<s:SolidColor color="#313132"/>
+				</s:fill>
+			</s:Path>
+			<s:Path data="M 0.105 10.275 C 3.769 8.462 5.431 6.229 5.565 2.262 L 5.564 1.977 L 5.566 1.982 L 5.566 1.904 L 5.574 1.954 L 5.565 2.259 C 5.557 2.086 5.533 1.929 5.494 1.782 C 5.417 1.576 5.329 1.381 5.229 1.2 C 4.431 0.044 2.357 0.032 0.624 0 C 0.413 0.014 0.207 0.018 0 0.014 L 0.105 10.275 Z" x="31.545" y="86.693">
+				<s:fill>
+					<s:SolidColor color="#313132"/>
+				</s:fill>
+			</s:Path>
+			<s:Path data="M 0 40.678 C 0.016 30.727 3.546 20.704 11.422 12.991 C 14.372 10.103 18.516 6.495 22.736 4.021 C 24.871 2.77 27.027 2.69 29.058 2.26 C 31.144 1.816 36.282 3.434 36.111 0 L 35.969 40.678 L 36.156 81.311 C 36.327 77.877 31.1 79.627 29.013 79.185 C 26.983 78.754 24.871 78.586 22.736 77.335 C 18.516 74.861 14.372 71.254 11.422 68.364 C 3.546 60.651 0.016 50.629 0 40.678 Z" d:id="6" x="0.875" y="8.012">
+				<s:fill>
+					<s:SolidColor color="#313132"/>
+				</s:fill>
+				<s:filters>
+					<s:DropShadowFilter alpha="0.5" angle="180" blurX="1" blurY="1" distance="1" quality="2"/>
+				</s:filters>
+			</s:Path>
+			<s:Path data="M 0 40.623 C 0.016 31.02 3.423 21.347 11.024 13.902 C 13.871 11.114 17.869 7.633 21.942 5.244 C 24.003 4.037 26.084 3.108 28.044 2.691 C 30.058 2.264 35.017 3.314 34.852 0 L 34.715 40.623 L 34.852 81.246 C 35.017 77.933 30.058 78.983 28.044 78.555 C 26.084 78.139 24.003 77.21 21.942 76.002 C 17.869 73.614 13.871 70.132 11.024 67.344 C 3.423 59.9 0.016 50.228 0 40.623 Z" x="2.304" y="8.031">
+				<s:fill>
+					<s:LinearGradient scaleX="26.1418" x="9.317" y="40.624">
+						<s:GradientEntry color="#B7E1E3" ratio="0"/>
+						<s:GradientEntry color="#FFFFFF" ratio="0.654545"/>
+						<s:GradientEntry color="#E5F4F3" ratio="0.793939"/>
+						<s:GradientEntry color="#AEB0B3" ratio="0.909091"/>
+						<s:GradientEntry color="#96999C" ratio="1"/>
+					</s:LinearGradient>
+				</s:fill>
+			</s:Path>
+			<s:Path data="M 0 36.227 C 0.015 27.09 3.141 17.884 10.115 10.8 C 12.725 8.147 16.393 4.834 20.132 2.563 C 22.02 1.412 23.93 0.528 25.727 0.133 C 26.264 0.014 27.026 0.017 27.837 0 L 27.837 0.042 C 27.569 0.061 27.327 0.087 27.117 0.133 C 25.319 0.528 23.41 1.412 21.522 2.563 C 17.782 4.834 14.115 8.147 11.504 10.8 C 4.53 17.884 1.405 27.09 1.389 36.227 C 1.405 45.365 4.53 54.571 11.504 61.655 C 14.115 64.307 17.782 67.621 21.522 69.893 C 23.41 71.043 25.319 71.927 27.117 72.322 C 27.327 72.368 27.569 72.395 27.837 72.412 L 27.837 72.455 C 27.026 72.439 26.264 72.441 25.727 72.322 C 23.93 71.927 22.02 71.043 20.132 69.893 C 16.393 67.621 12.725 64.307 10.115 61.655 C 3.141 54.571 0.015 45.365 0 36.227 Z" x="3.063" y="12.427">
+				<s:fill>
+					<s:SolidColor/>
+				</s:fill>
+			</s:Path>
+			<s:RichText ai:aa="2" color="#000000" columnCount="1" fontFamily="Calibri" fontSize="15.8778" fontWeight="bold" d:id="7" kerning="on" rotation="90" tabStops="S47.6332893371582" text="MENU" d:userLabel="MENU" flm:variant="3" whiteSpaceCollapse="preserve" x="30" y="27"/>
+		</s:Group>
+	</s:Group>
+	<s:transitions>
+		<s:Transition fromState="up" toState="over" autoReverse="true">
+			<s:Parallel>
+				<s:Parallel target="{path5}">
+					<s:Fade duration="0"/>
+				</s:Parallel>
+				<s:Parallel target="{path4}">
+					<s:Fade duration="0"/>
+				</s:Parallel>
+				<s:Parallel target="{path3}">
+					<s:Fade duration="0"/>
+				</s:Parallel>
+				<s:Parallel target="{path2}">
+					<s:Fade duration="0"/>
+				</s:Parallel>
+				<s:Parallel target="{path1}">
+					<s:Fade duration="0"/>
+				</s:Parallel>
+				<s:Parallel target="{richtext1}">
+					<s:Fade duration="0"/>
+				</s:Parallel>
+				<s:Parallel target="{group1}">
+					<s:Fade duration="0"/>
+				</s:Parallel>
+			</s:Parallel>
+		</s:Transition>
+	</s:transitions>
+</s:Skin>

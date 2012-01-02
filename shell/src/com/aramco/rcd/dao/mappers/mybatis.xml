@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE configuration PUBLIC "-//mybatis.org//DTD Config 3.0//EN" "http://mybatis.org/dtd/mybatis-3-config.dtd">
+<!-- 
+Author: Faizuddin Tadamarry
+ -->
+<configuration>
+
+	<typeAliases>
+		<!--Selection Header-->
+			<typeAlias type="com.aramco.rcd.entity.BaseVO" alias="BaseVO" />
+			
+			
+		<!-- Reports-->
+			<typeAlias type="com.aramco.rcd.entity.reports.ReportSelectionVO" alias="ReportSelectionVO" /> 
+			
+	</typeAliases>
+	
+<!--	<mappers>-->
+		<!--	Reports	-->
+<!--			<mapper resource="com/aramco/rcd/dao/mappers/reports/ReportMapper.xml"/>-->
+<!--			-->
+<!--	</mappers>-->
+</configuration>
+

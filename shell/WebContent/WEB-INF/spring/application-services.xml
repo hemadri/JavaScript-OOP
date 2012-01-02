@@ -1,0 +1,60 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+	xmlns:flex="http://www.springframework.org/schema/flex"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xmlns:aop="http://www.springframework.org/schema/aop"
+	xsi:schemaLocation="
+		http://www.springframework.org/schema/beans
+		http://www.springframework.org/schema/beans/spring-beans-2.5.xsd
+		http://www.springframework.org/schema/aop
+		http://www.springframework.org/schema/aop/spring-aop-2.5.xsd
+		http://www.springframework.org/schema/flex
+		http://www.springframework.org/schema/flex/spring-flex-1.0.xsd">	
+    
+    <!-- Login Services -->
+        <bean id="loginService" class="com.aramco.rcd.service.LoginService" scope="session" >
+        	<aop:scoped-proxy />
+        </bean>
+        
+        <bean id="logoutService" class="com.aramco.rcd.service.LogoutService" scope="request" >
+        	<aop:scoped-proxy />
+        </bean>
+        <bean id="springApplicationContext" class="com.aramco.rcd.service.SpringApplicationContext" scope="singleton" />
+        
+        
+     <!-- ********************** General Services **********************************************************-->  
+        <bean id="paramSelectionService" class="com.aramco.rcd.service.ParamSelectionService" scope="request" >
+        	<aop:scoped-proxy />
+        </bean>
+        
+        
+        <bean id="reportService" class="com.aramco.rcd.service.reports.ReportService" scope="request" >
+        	<aop:scoped-proxy />
+        </bean>
+        
+        
+        
+        
+        
+     	<!--  Factory Classes -->   
+        <bean id="baseFactory" class="com.aramco.rcd.dao.factory.BaseFactory" scope="session" abstract="true">
+        
+        	<property name="iBatisConfigFileLocation">
+	            <value>com/aramco/rcd/dao/mappers/mybatis.xml</value>
+	        </property>
+        </bean>
+        
+        <!-- Application Factory Classes -->
+        <bean id="logger" class="com.aramco.rcd.database.LoggerConfiguration" scope="session" destroy-method="destroy"/>
+        <bean id="authenticateFactory" class="com.aramco.rcd.dao.factory.AuthenticateFactory" scope="request" parent="baseFactory"/>
+        <bean id="loginUser" class="com.aramco.rcd.entity.common.LoginUser" scope="session" destroy-method="destroy"/>
+        <bean id="logonUser" class="com.aramco.rcd.entity.common.LogonUser" scope="session" />
+        <bean id="dbConnector" class="com.aramco.rcd.database.DBConnector" >
+			<property name="dbURL">
+	            <value>jdbc:oracle:thin:@</value>
+	        </property>
+        </bean>
+        
+        
+    
+</beans>

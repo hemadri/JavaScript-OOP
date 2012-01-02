@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="utf-8"?>
+<swiz:BeanProvider xmlns:fx="http://ns.adobe.com/mxml/2009" 
+				   xmlns:s="library://ns.adobe.com/flex/spark" 
+				   xmlns:mx="library://ns.adobe.com/flex/mx" 
+				   xmlns:swiz="http://swiz.swizframework.org" 
+				   xmlns:controller="com.aramco.rcd.controller.*" 
+				   xmlns:pm="com.aramco.rcd.pm.*" 
+				   >
+
+	<fx:Declarations>
+		<s:RemoteObject id="loginService" 	destination="loginService" showBusyCursor="true"  />
+		<s:RemoteObject id="logoutService" 	destination="logoutService" showBusyCursor="true"  />
+	</fx:Declarations>
+	
+	<!-- Controllers Start-->
+		<controller:LoginController id="loginController"/>
+	<!-- Controllers end-->
+	
+	<!-- Presentation Models -->
+			<!-- The PM has to be declared in the BeanProvider and the recommended way is to 
+			declare it as a Prototype so the PM will only be created (instantiated) 
+			when the corresponding view is added to the stage. -->
+		<!--<swiz:Prototype type="{AppNavigationPM}" />-->
+		<pm:AppNavigationPM  id="appNavigationPM"/>
+	
+	<!-- VO -->
+	
+</swiz:BeanProvider>
