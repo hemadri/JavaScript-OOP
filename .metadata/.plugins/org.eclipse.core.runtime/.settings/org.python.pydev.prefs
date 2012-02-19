@@ -1,4 +1,0 @@
-#Wed Jan 04 08:36:16 AST 2012
-JYTHON_INTERPRETER_PATH=Name\:WebLogic 10.3 WLST Interpreter\:EndName\:Version2.2.1Executable\:C\:\\Oracle1\\Middleware\\wlserver_10.3/server/lib/weblogic.jar|C\:\\Oracle1\\Middleware\\wlserver_10.3/common/wlst/|C\:\\Oracle1\\Middleware\\wlserver_10.3/common/wlst/modules|C\:\\Oracle1\\Middleware\\wlserver_10.3/common/wlst/lib/|C\:\\Oracle1\\Middleware\\wlserver_10.3/common/wlst/modules/jython-modules/Lib|C\:\\Oracle1\\Middleware\\jrockit_160_05\\jre\\lib\\rt.jar@$|StringIO|__builtin__|email|os|os.path|re|sys|wlstModule^python.cachedir.skip\=true|&&&&&
-eclipse.preferences.version=1
-JYTHON_CACHE_DIR=D\:\\Users\\seelamhx\\AppData\\Local\\Temp\\jython_cache

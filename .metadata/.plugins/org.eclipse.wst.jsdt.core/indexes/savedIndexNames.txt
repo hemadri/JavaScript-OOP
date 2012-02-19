@@ -1,5 +1,0 @@
-INDEX VERSION 1.121+D:\Hemadri\GIT\.metadata\.plugins\org.eclipse.wst.jsdt.core\indexes
-2862141083.index
-1878662850.index
-794773809.index
-4037368341.index

@@ -1,3 +1,0 @@
-<?xml version="1.0" encoding="UTF-8"?>
-<session version="1.0">&#x0A;<refactoring comment="Rename resource &apos;shell/src/com/aramco&apos; to &apos;flexutil&apos;" description="Rename resource &apos;aramco&apos;" flags="7" id="org.eclipse.ltk.core.refactoring.rename.resource" input="src/com/aramco" name="flexutil" stamp="1325494510439" updateReferences="true"/>&#x0A;<refactoring comment="Rename resource &apos;shell/src/com/flexutil/rcd&apos; to &apos;shell&apos;" description="Rename resource &apos;rcd&apos;" flags="7" id="org.eclipse.ltk.core.refactoring.rename.resource" input="src/com/flexutil/rcd" name="shell" stamp="1325494514737" updateReferences="true"/>
-</session>
